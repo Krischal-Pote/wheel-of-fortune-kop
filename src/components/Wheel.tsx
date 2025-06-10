@@ -307,88 +307,87 @@ const Wheel: React.FC<WheelProps> = ({
       )}
 
       {/* Cheers Animation */}
-      {showCheers &&
-        showCheering(
-          <div className="fixed inset-0 pointer-events-none z-40 overflow-hidden">
-            {/* Confetti particles */}
-            {Array.from({ length: 50 }).map((_, i) => (
+      {showCheers && (
+        <div className="fixed inset-0 pointer-events-none z-40 overflow-hidden">
+          {/* Confetti particles */}
+          {Array.from({ length: 50 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-ping"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`,
+                animationDuration: `${1 + Math.random() * 2}s`,
+              }}
+            >
               <div
-                key={i}
-                className="absolute animate-ping"
+                className="w-3 h-3 rounded-full"
                 style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  animationDuration: `${1 + Math.random() * 2}s`,
+                  backgroundColor: [
+                    "#ff6b6b",
+                    "#4ecdc4",
+                    "#45b7d1",
+                    "#96ceb4",
+                    "#ffeaa7",
+                    "#dda0dd",
+                  ][Math.floor(Math.random() * 6)],
                 }}
-              >
-                <div
-                  className="w-3 h-3 rounded-full"
-                  style={{
-                    backgroundColor: [
-                      "#ff6b6b",
-                      "#4ecdc4",
-                      "#45b7d1",
-                      "#96ceb4",
-                      "#ffeaa7",
-                      "#dda0dd",
-                    ][Math.floor(Math.random() * 6)],
-                  }}
-                />
-              </div>
-            ))}
-
-            {/* Falling confetti */}
-            {Array.from({ length: 30 }).map((_, i) => (
-              <div
-                key={`fall-${i}`}
-                className="absolute animate-bounce"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: "-10px",
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`,
-                  transform: `translateY(${window.innerHeight + 50}px)`,
-                }}
-              >
-                <div
-                  className="w-4 h-4 rotate-45"
-                  style={{
-                    backgroundColor: [
-                      "#ff6b6b",
-                      "#4ecdc4",
-                      "#45b7d1",
-                      "#96ceb4",
-                      "#ffeaa7",
-                      "#dda0dd",
-                    ][Math.floor(Math.random() * 6)],
-                  }}
-                />
-              </div>
-            ))}
-
-            {/* Celebration text */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-8xl animate-pulse">🎉 🎊 🎈</div>
+              />
             </div>
+          ))}
 
-            {/* Floating celebration emojis */}
-            {["🎉", "🎊", "🎈", "🥳", "✨", "🌟"].map((emoji, i) => (
+          {/* Falling confetti */}
+          {Array.from({ length: 30 }).map((_, i) => (
+            <div
+              key={`fall-${i}`}
+              className="absolute animate-bounce"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: "-10px",
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`,
+                transform: `translateY(${window.innerHeight + 50}px)`,
+              }}
+            >
               <div
-                key={`emoji-${i}`}
-                className="absolute text-4xl animate-bounce"
+                className="w-4 h-4 rotate-45"
                 style={{
-                  left: `${10 + i * 15}%`,
-                  top: `${20 + (i % 2) * 30}%`,
-                  animationDelay: `${i * 0.2}s`,
-                  animationDuration: "2s",
+                  backgroundColor: [
+                    "#ff6b6b",
+                    "#4ecdc4",
+                    "#45b7d1",
+                    "#96ceb4",
+                    "#ffeaa7",
+                    "#dda0dd",
+                  ][Math.floor(Math.random() * 6)],
                 }}
-              >
-                {emoji}
-              </div>
-            ))}
+              />
+            </div>
+          ))}
+
+          {/* Celebration text */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-8xl animate-pulse">🎉 🎊 🎈</div>
           </div>
-        )}
+
+          {/* Floating celebration emojis */}
+          {["🎉", "🎊", "🎈", "🥳", "✨", "🌟"].map((emoji, i) => (
+            <div
+              key={`emoji-${i}`}
+              className="absolute text-4xl animate-bounce"
+              style={{
+                left: `${10 + i * 15}%`,
+                top: `${20 + (i % 2) * 30}%`,
+                animationDelay: `${i * 0.2}s`,
+                animationDuration: "2s",
+              }}
+            >
+              {emoji}
+            </div>
+          ))}
+        </div>
+      )}
 
       {selected && !showDialog && !showCheers && (
         <div className="mt-4 p-4 bg-green-100 border-2 border-green-300 rounded-lg">
