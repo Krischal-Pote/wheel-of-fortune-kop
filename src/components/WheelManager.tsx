@@ -6,6 +6,7 @@ const WheelManager: React.FC = () => {
   const [items, setItems] = useState<string[]>([]);
   const [input, setInput] = useState("");
   const [lastSelected, setLastSelected] = useState<string>("");
+
   // CSV Upload Handler
   const handleCSVUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -111,7 +112,6 @@ const WheelManager: React.FC = () => {
       <div className="mt-6">
         <Wheel
           options={items}
-          direction="clockwise"
           font="Verdana"
           onSpinEnd={(selected) => {
             setLastSelected(selected);
@@ -119,9 +119,9 @@ const WheelManager: React.FC = () => {
           }}
           playSpinAudio={true}
           playCheerAudio={true}
-          showCheering={true}
         />
       </div>
+      <div className="hidden">{lastSelected}</div>
     </div>
   );
 };

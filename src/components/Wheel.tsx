@@ -17,7 +17,6 @@ interface WheelProps {
 
 const Wheel: React.FC<WheelProps> = ({
   options,
-  direction = "clockwise",
   font = "Arial",
   sliceColor = "red",
   textColor = "#fff",
@@ -25,7 +24,6 @@ const Wheel: React.FC<WheelProps> = ({
   onSpinEnd,
   playSpinAudio = false,
   playCheerAudio = false,
-  showCheering = false,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [angle, setAngle] = useState(0);
