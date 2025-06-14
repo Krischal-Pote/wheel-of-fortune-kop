@@ -62,6 +62,8 @@ You can also build a complete admin interface to manage the wheel options dynami
 import React, { useState } from "react";
 import Papa from "papaparse";
 import Wheel from "wheel-of-fortune-kop";
+import "wheel-of-fortune-kop/style.css";
+import Papa from "papaparse";
 
 const WheelManager = () => {
   const [items, setItems] = useState<string[]>([]);
@@ -196,7 +198,7 @@ export default WheelManager;
 | `size`           | `number`                         | `300`         | Canvas size                 |
 | `onSpinEnd`      | `(selected: string) => void`     | —             | Called when spin ends       |
 | `playSpinAudio`  | `boolean`                        | `false`       | Enable spinning sound       |
-| `playCheerAudio` | `boolean`                        | `false`       | Enable cheer sound          |
+| `playCheerAudio` | `boolean`                        | `false`       | Enable cheer sound (make the cheer false there is bug )          |
 
 
 ## 🎯 Perfect For

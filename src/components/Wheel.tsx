@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-
+import "../styles.css";
 type Direction = "clockwise" | "anticlockwise";
 
 interface WheelProps {
@@ -209,29 +209,16 @@ const Wheel: React.FC<WheelProps> = ({
   };
 
   return (
-    <div className="relative flex flex-col  items-center">
+    <div className="wheel-container">
       <canvas
         ref={canvasRef}
         width={size}
         height={size}
-        className="rounded-full border-4 border-gray-300 shadow-lg"
+        className="wheel-canvas"
       />
 
       {/* Pointer/Indicator */}
-      <div
-        className="absolute z-10"
-        style={{
-          top: "-10px",
-          left: "49%",
-          transform: "translateX(-50%)",
-          width: 0,
-          height: 0,
-          //   borderLeft: "15px solid transparent",
-          //   borderRight: "15px solid transparent",
-          //   borderBottom: "25px solid #ff6b6b",
-          filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
-        }}
-      >
+      <div className="wheel-pointer">
         <svg
           fill="#000000"
           width="35px"
@@ -248,11 +235,7 @@ const Wheel: React.FC<WheelProps> = ({
         </svg>
       </div>
 
-      <button
-        onClick={spin}
-        disabled={spinning}
-        className="mt-4 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-lg shadow-md transition-colors"
-      >
+      <button onClick={spin} disabled={spinning} className="spin-button">
         {spinning ? "Spinning..." : "Spin the Wheel!"}
       </button>
 
@@ -286,17 +269,12 @@ const Wheel: React.FC<WheelProps> = ({
 
       {/* Winner Dialog */}
       {showDialog && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4 text-center animate-bounce">
-            <div className="text-6xl mb-4">🎉</div>
-            <h2 className="text-3xl font-bold text-green-600 mb-4">Winner!</h2>
-            <div className="text-2xl font-semibold text-gray-800 mb-6 p-4 bg-yellow-100 rounded-lg border-2 border-yellow-300">
-              {selected}
-            </div>
-            <button
-              onClick={closeDialog}
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold text-lg transition-colors"
-            >
+        <div className="dialog-overlay">
+          <div className="dialog-content">
+            <div className="dialog-emoji">🎉</div>
+            <h2 className="dialog-title">Winner!</h2>
+            <div className="dialog-winner">{selected}</div>
+            <button onClick={closeDialog} className="dialog-button">
               Awesome! 🎊
             </button>
           </div>
@@ -304,10 +282,8 @@ const Wheel: React.FC<WheelProps> = ({
       )}
 
       {selected && !showDialog && !showCheers && (
-        <div className="mt-4 p-4 bg-green-100 border-2 border-green-300 rounded-lg">
-          <div className="text-xl font-bold text-green-800 text-center">
-            🎉 Last Winner: {selected} 🎉
-          </div>
+        <div className="last-winner">
+          <div className="last-winner-text">🎉 Last Winner: {selected} 🎉</div>
         </div>
       )}
     </div>

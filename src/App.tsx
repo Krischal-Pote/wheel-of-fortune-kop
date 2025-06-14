@@ -1,8 +1,9 @@
 import "./App.css";
+
 import Wheel from "./components/Wheel";
 
 function App() {
-  const options = ["Apple", "Banana", "Cherry"]; // sample data
+  const options = ["Apple", "Banana", "Cherry", "Krischal"];
   return (
     <>
       <>
@@ -11,7 +12,7 @@ function App() {
           font="Verdana"
           playSpinAudio={true}
           playCheerAudio={true}
-          onSpinEnd={(selected) => console.log("Selected:", selected)}
+          // onSpinEnd={(selected) => console.log("Selected:", selected)}
         />
       </>
     </>
