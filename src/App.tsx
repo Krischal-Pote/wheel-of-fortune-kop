@@ -1,10 +1,19 @@
 import "./App.css";
-import WheelManager from "./components/WheelManager";
+import Wheel from "./components/Wheel";
 
 function App() {
+  const options = ["Apple", "Banana", "Cherry"]; // sample data
   return (
     <>
-      <WheelManager />
+      <>
+        <Wheel
+          options={options}
+          font="Verdana"
+          playSpinAudio={true}
+          playCheerAudio={true}
+          onSpinEnd={(selected) => console.log("Selected:", selected)}
+        />
+      </>
     </>
   );
 }

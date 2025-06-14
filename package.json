@@ -4,7 +4,7 @@
   "name": "wheel-of-fortune-kop",
   "description": "Customizable Wheel of Fortune with CSV/JSON input and CRUD support.",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
