@@ -21,16 +21,21 @@ A fully featured React Wheel of Fortune component with canvas rendering, audio e
 ```bash
 npm install wheel-of-fortune-kop
 ```
+
 ---
 
- Make sure to also install peer dependencies if not present:
+Make sure to also install peer dependencies if not present:
+
 ```bash
 npm install react react-dom
 ```
+
 ```bash
 npm install papaparse
 ```
+
 ---
+
 ## 🛠️ Basic Usage
 
 ```tsx
@@ -56,6 +61,7 @@ const App = () => {
 ```
 
 ## 📁 CSV Import & Full CRUD Manager
+
 You can also build a complete admin interface to manage the wheel options dynamically:
 
 ```tsx
@@ -188,29 +194,29 @@ export default WheelManager;
 
 ## 📋 Props Reference
 
-| Prop             | Type                             | Default       | Description                 |
-| ---------------- | -------------------------------- | ------------- | --------------------------- |
-| `options`        | `string[]` (required)            | —             | List of wheel options       |
-| `direction`      | `"clockwise" \| "anticlockwise"` | `"clockwise"` | (future feature)            |
-| `font`           | `string`                         | `"Arial"`     | Font used for option labels |
-| `sliceColor`     | `string`                         | `"red"`       | Color of alternating slices |
-| `textColor`      | `string`                         | `"#fff"`      | Text color                  |
-| `size`           | `number`                         | `300`         | Canvas size                 |
-| `onSpinEnd`      | `(selected: string) => void`     | —             | Called when spin ends       |
-| `playSpinAudio`  | `boolean`                        | `false`       | Enable spinning sound       |
-| `playCheerAudio` | `boolean`                        | `false`       | Enable cheer sound (make the cheer false there is bug )          |
-
+| Prop             | Type                             | Default       | Description                                             |
+| ---------------- | -------------------------------- | ------------- | ------------------------------------------------------- |
+| `options`        | `string[]` (required)            | —             | List of wheel options                                   |
+| `direction`      | `"clockwise" \| "anticlockwise"` | `"clockwise"` | (future feature)                                        |
+| `font`           | `string`                         | `"Arial"`     | Font used for option labels                             |
+| `sliceColor`     | `string`                         | `"red"`       | Color of alternating slices                             |
+| `textColor`      | `string`                         | `"#fff"`      | Text color                                              |
+| `size`           | `number`                         | `300`         | Canvas size                                             |
+| `onSpinEnd`      | `(selected: string) => void`     | —             | Called when spin ends                                   |
+| `playSpinAudio`  | `boolean`                        | `false`       | Enable spinning sound                                   |
+| `playCheerAudio` | `boolean`                        | `false`       | Enable cheer sound (make the cheer false there is bug ) |
 
 ## 🎯 Perfect For
+
 - Classroom raffles
 - Giveaways & contests
 - Ice-breaker games
 - Team-building exercises
 
 ## 📛 License
+
 MIT © 2025 Krischal Om Pote
 
 ## Website demolink
 
-https://wheel-of-fortune-kop-amco.vercel.app/
-
+https://demo-wheel-fortune-kop.vercel.app/
