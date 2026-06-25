@@ -244,11 +244,6 @@ const Wheel: React.FC<WheelProps> = ({
         preload="auto"
         onError={() => console.error("Error loading spin audio")}
       >
-        <source
-          src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
-          type="audio/wav"
-        />
-        <source src="/spin.mp3" type="audio/mpeg" />
         <source src="/spin.wav" type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
@@ -258,11 +253,6 @@ const Wheel: React.FC<WheelProps> = ({
         preload="auto"
         onError={() => console.error("Error loading cheer audio")}
       >
-        <source
-          src="https://www.soundjay.com/misc/sounds/beep-28.wav"
-          type="audio/wav"
-        />
-        <source src="/cheer.mp3" type="audio/mpeg" />
         <source src="/cheer.wav" type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
